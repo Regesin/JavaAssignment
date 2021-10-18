@@ -1,23 +1,30 @@
 package Assignments1;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 public class ArmstrongNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int integer = 0, originalInteger = 0, result = 0, temp = 0;
+		int originalinteger = 0, copyInteger = 0, remainder = 0, count = 0, tempinteger = 0;
+		double  result = 0;
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the number to find Armstrong Number :");
-		integer = sc.nextInt();
-		originalInteger = integer;
-		while (integer != 0) {
-			temp = integer % 10;
-			result = result + (temp * temp * temp);
-			integer = integer / 10;
+		originalinteger = sc.nextInt();
+		copyInteger = originalinteger;
+		tempinteger = originalinteger;
+		while(tempinteger !=0) {
+			tempinteger = tempinteger/10;
+			++count;
 		}
-		if (result == originalInteger) {
+		while (originalinteger != 0) {
+			remainder = originalinteger % 10;
+			result = result + Math.pow(remainder, count);
+			originalinteger = originalinteger / 10;
+		}
+		if (result == copyInteger) {
 			System.out.println("Number is Armstrong Number");
 		} else {
 			System.out.println("Number is Not Armstrong Number");
