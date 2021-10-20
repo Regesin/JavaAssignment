@@ -1,29 +1,49 @@
 package Assignments1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DuplicatesInArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int count1 = 0;
 		Scanner sc = new Scanner(System.in);
-		int number = 0, count = 0;
-		System.out.print("Enter the no of Elements in Array : ");
-		number = sc.nextInt();
-		int[] array = new int[number];
-		for (int i = 0; i < number; i++) {
-			array[i] = sc.nextInt();
+		System.out.print("Enter the Length of the Array :");
+		int lengthOfArray = sc.nextInt();
+
+		int[] numbers = new int[lengthOfArray];
+		System.out.println("Enter Elements in Array :");
+		for (int i = 0; i < numbers.length; i++) {
+
+			numbers[i] = sc.nextInt();
+
 		}
-		for (int i = 0; i < number; i++) {
-			for (int j = i+1; j < number; j++) {
-				if (array[i] == array[j]) {
-					count = count + 1;
+		int[] newArray = new int[numbers.length];
+		int visited = -1;
+
+		for (int i = 0; i < numbers.length; i++) {
+			int count = 1;
+			for (int j = i + 1; j < numbers.length; j++) {
+				if (numbers[i] == numbers[j]) {
+					count++;
+					// To avoid counting same element again
+					newArray[j] = visited;
 				}
 			}
-
+			if (newArray[i] != visited) {
+				newArray[i] = count;
+			}
 		}
 
-		System.out.println(" The Duplicates in Array are :" + count);
+		// Displays the frequency of each element present in array
+		for (int i = 0; i < newArray.length; i++) {
+			if (newArray[i] != visited && newArray[i] > 1)
+				count1 += newArray[i] - 1;
+		}
+
+		System.out.println("The Duplicate Numbers are " + count1);
+
 		sc.close();
 	}
 
