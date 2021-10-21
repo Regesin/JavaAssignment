@@ -36,6 +36,8 @@ public class ATM {
 			default:
 				System.exit(10);
 			}
+			sc.close();
+
 		}
 
 	}
