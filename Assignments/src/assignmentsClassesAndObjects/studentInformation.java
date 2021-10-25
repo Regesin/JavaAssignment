@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class studentInformation {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		BufferedReader inp = new BufferedReader(new InputStreamReader(System.in));
 
@@ -35,9 +34,9 @@ public class studentInformation {
 			marks[i] = sc.nextInt();
 		}
 		student stu1 = new student(name, studentId, marks);
-
 		stu1.getDetails();
 		stu1.getGrades();
+		
 		sc.close();
 
 	}

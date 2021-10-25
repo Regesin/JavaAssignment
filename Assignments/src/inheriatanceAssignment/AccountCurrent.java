@@ -9,7 +9,6 @@ public class AccountCurrent extends Bank {
 
 	@Override
 	void withdraw(double amount) {
-		// TODO Auto-generated method stub
 		balance = balance - amount - 50;
 		//super.withdraw(amount);
 	}

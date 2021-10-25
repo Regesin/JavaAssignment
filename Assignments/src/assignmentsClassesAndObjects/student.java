@@ -8,7 +8,6 @@ public class student {
 	double sum = 0;
 	float average = 0f;
 	int[] marks = new int[3];
-	Scanner sc = new Scanner(System.in);
 
 	public student(String name, String studentId, int[] marks) {
 		super();
